@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:padding="16dp"
-    android:background="@color/background_color">
+    >
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_horizontal_30"
@@ -25,6 +25,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         tools:text="Current word: test"/>
+
 
     <TextView
         android:id="@+id/wordTextView"
@@ -109,5 +110,18 @@
         app:layout_constraintEnd_toEndOf="@+id/submitButton"
         app:layout_constraintStart_toStartOf="@+id/guessEditText"
         app:layout_constraintTop_toBottomOf="@+id/tv_error_msg" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_guessedWords"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        tools:listitem="@layout/item_character"
+        tools:itemCount="9"
+        android:scrollbars="none"
+        app:layout_constraintEnd_toEndOf="@+id/submitButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/resultTextView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

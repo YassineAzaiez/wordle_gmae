@@ -11,8 +11,10 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.recyclerview.widget.GridLayoutManager
 import com.example.motusgame.core.utils.show
 import com.example.motusgame.databinding.FragmentGameBinding
+import com.example.motusgame.ui.model.CharacterInfo
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.filter
@@ -26,7 +28,7 @@ class GameFragment : Fragment() {
     private val binding
         get() = _binding!!
 
-    private val wordList = listOf("apple", "banana", "cherry", "orange", "grape", "kiwi", "mango")
+    private  val motusGameAdapter: MotusGameAdapter = MotusGameAdapter(mutableListOf())
 
     private val viewModel by viewModels<GameViewModel>()
 
@@ -49,20 +51,13 @@ class GameFragment : Fragment() {
     }
 
     private fun initViews() {
-
+        startGame()
         initObservers()
         with(binding) {
             submitButton.setOnClickListener {
-                startGame()
-//                if (viewModel.checkGuessedWord(
-//                        guessEditText.text.toString(),
-//                        currentWordTextView.text.toString()
-//                    ) != GuessWordValidation.VALID
-//                ) {
-//                      showErrorMessage()
-//                } else{
-//
-//                }
+
+                 viewModel.checkUserInput(guessEditText.text.toString())
+
             }
         }
 
@@ -78,8 +73,19 @@ class GameFragment : Fragment() {
                 }
 
                 launch {
-                    viewModel.wordToGuess.filter { it.isNotEmpty() }.collect { word ->
+                    viewModel.wordToGuessState.filter { it.isNotEmpty() }.collect { word ->
                         Toast.makeText(requireActivity(), word, Toast.LENGTH_SHORT).show()
+                    }
+                }
+
+                launch {
+                    viewModel.enteredWordsState.filter { it.isNotEmpty() }.collect { word ->
+                           binding.rvGuessedWords.apply {
+                               adapter = motusGameAdapter
+                               layoutManager = GridLayoutManager(requireContext(),6)
+
+                           }
+                        motusGameAdapter.addToList(word)
                     }
                 }
             }
