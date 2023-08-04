@@ -14,11 +14,13 @@ import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.motusgame.R
 import com.example.motusgame.core.utils.hide
+import com.example.motusgame.core.utils.hideKeyboard
 import com.example.motusgame.core.utils.networkUtils.ApiResult
 import com.example.motusgame.core.utils.show
 import com.example.motusgame.databinding.FragmentGameBinding
 import com.example.motusgame.ui.resultScreen.ResultFragment
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.filter
@@ -79,6 +81,7 @@ class GameFragment : Fragment() {
             }
 
             btnStartGame.setOnClickListener {
+                hideKeyboard()
                 viewModel.apply {
                     maxAttempts =
                         binding.etNumberOfAttempts.text.toString().takeIf { it.isNotEmpty() }
@@ -156,6 +159,7 @@ class GameFragment : Fragment() {
                     viewModel.gameResultState.collect { result ->
                         clearGameSettingsFields()
                         viewModel.resetAttempts()
+                        delay(1000)
                         navigateToResultScreen(result)
                     }
                 }

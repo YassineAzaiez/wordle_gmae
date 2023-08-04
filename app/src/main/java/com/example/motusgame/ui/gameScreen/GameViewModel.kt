@@ -10,7 +10,6 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.collectLatest
@@ -73,7 +72,7 @@ class GameViewModel @Inject constructor(
     }
 
     private fun checkUserResult() = viewModelScope.launch {
-        delay(1300)
+
         val isCorrectWord = _enteredWordsState.value.all { it.state == CharacterState.CORRECT }
         when {
             currentAttempts < maxAttempts && isCorrectWord -> _gameResultState.emit(true)
