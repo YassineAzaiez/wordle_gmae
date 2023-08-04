@@ -21,10 +21,8 @@ import com.example.motusgame.databinding.FragmentGameBinding
 import com.example.motusgame.ui.resultScreen.ResultFragment
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.delay
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.filter
-import kotlinx.coroutines.flow.filterNotNull
 import kotlinx.coroutines.launch
 
 

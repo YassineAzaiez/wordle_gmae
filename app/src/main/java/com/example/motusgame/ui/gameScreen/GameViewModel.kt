@@ -7,7 +7,6 @@ import com.example.motusgame.domain.repository.WordRepository
 import com.example.motusgame.ui.CharacterInfo
 import com.example.motusgame.ui.CharacterState
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asSharedFlow

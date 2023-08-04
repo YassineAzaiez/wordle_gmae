@@ -1,7 +1,6 @@
 package com.example.motusgame.core.di
 
 import com.example.motusgame.data.api.RandomWordApi
-import com.google.gson.Gson
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

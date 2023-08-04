@@ -91,6 +91,8 @@ dependencies {
     implementation(platform("org.jetbrains.kotlin:kotlin-bom:1.8.0"))
     implementation("androidx.fragment:fragment-ktx:1.6.1")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.1")
+    testImplementation ("androidx.arch.core:core-testing:2.2.0")
+    testImplementation ("com.android.support.test:runner:1.0.2")
 }
 kapt {
     correctErrorTypes = true
