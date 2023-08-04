@@ -2,9 +2,7 @@ package com.example.motusgame.ui
 
 import com.example.motusgame.R
 
-enum class GuessWordValidation {
-    LONG , SHORT , EMPTY , VALID
-}
+
 
 enum class CharacterState (val stateColor : Int){
     CORRECT(R.color.correct_character_color),

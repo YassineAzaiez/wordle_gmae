@@ -1,20 +1,18 @@
-package com.example.motusgame.ui
+package com.example.motusgame.ui.gameScreen
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
-import androidx.recyclerview.widget.DiffUtil
-import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.motusgame.databinding.ItemCharacterBinding
-import com.example.motusgame.ui.model.CharacterInfo
+import com.example.motusgame.ui.CharacterInfo
 
 
 class MotusGameAdapter(
     private val listOfCharacter : MutableList<CharacterInfo>
 ) :
-    RecyclerView.Adapter< MotusGameAdapter.WordCharacterViewHolder>(){
+    RecyclerView.Adapter<MotusGameAdapter.WordCharacterViewHolder>(){
 
 
 

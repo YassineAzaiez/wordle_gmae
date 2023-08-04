@@ -1,6 +1,23 @@
 <resources>
-<string name="current_word">Current word: </string>
-<string name="enter_you_guess">Enter your guess below </string>
-<string name="submit">Submit </string>
-<string name="invalid_word_error">the word you entered is either shorter or longer than expected </string>
+    <string name="current_word">Current word: </string>
+    <string name="enter_you_guess">Enter your guess below </string>
+    <string name="submit">Submit </string>
+    <string name="start_game">Start game </string>
+    <string name="invalid_word_error">The word you entered is shorter than expected </string>
+    <string name="enter_your_guess_hint">Enter your guess </string>
+    <string name="game_difficulty">Choose word length between 6 and 9 </string>
+    <string name="number_of_attempts">Enter the number of attempts  </string>
+    <string name="game_info">Game Info:  </string>
+    <string name="correct_character_description">Letters surrounded by a red square are well placed  </string>
+    <string name="incorrect_character_description">The letters on the blue background are not in the word  </string>
+    <string name="mal_placed_character_description">The letters on the yellow background are not in the correct place  </string>
+
+    <!-- Success Screen -->
+    <string name="success_message">Congratulations! You guessed the word correctly.</string>
+    <string name="failure_message">unfortunately! You guessed the wrong word.</string>
+    <string name="play_again">Play Again</string>
+
+
+    <!-- Content Descriptions -->
+    <string name="success_icon_description">Success Icon</string>
 </resources>

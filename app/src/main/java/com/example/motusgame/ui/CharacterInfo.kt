@@ -1,6 +1,4 @@
-package com.example.motusgame.ui.model
-
-import com.example.motusgame.ui.CharacterState
+package com.example.motusgame.ui
 
 data class CharacterInfo(
     val characterValue : Char, val state : CharacterState
